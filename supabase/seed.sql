@@ -1,0 +1,2 @@
+-- Seed local: o conteúdo oficial (categorias e 30 questões) é aplicado pelas migrações.
+-- Usuários NÃO são criados aqui (sem senhas padrão). Use: npm run create-supervisor

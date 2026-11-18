@@ -1,0 +1,158 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-montserrat), "Axiforma", "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: var(--font-blinker);
+  --font-heading: var(--font-montserrat), "Axiforma", ui-sans-serif, system-ui, sans-serif;
+  --color-mz-red: var(--mz-red);
+  --color-mz-red-strong: var(--mz-red-strong);
+  --color-mz-red-soft: var(--mz-red-soft);
+  --color-mz-yellow: var(--mz-yellow);
+  --color-mz-yellow-soft: var(--mz-yellow-soft);
+  --color-mz-yellow-text: var(--mz-yellow-text);
+  --color-mz-blue: var(--mz-blue);
+  --color-mz-blue-soft: var(--mz-blue-soft);
+  --color-mz-green-dark: var(--mz-green-dark);
+  --color-mz-green: var(--mz-green);
+  --color-mz-green-soft: var(--mz-green-soft);
+  --color-mz-pink: var(--mz-pink);
+  --color-mz-chumbo: var(--mz-chumbo);
+  --color-mz-gray-dark: var(--mz-gray-dark);
+  --color-mz-gray: var(--mz-gray);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/*
+ * Identidade visual Magazord 2026 — paleta oficial.
+ * Regra 60/30/10: neutros predominam, vermelho Magazord para ações e
+ * destaques, demais cores com moderação (estados e gráficos).
+ */
+:root {
+  --mz-red: #e52944;
+  --mz-red-strong: #c41f37;
+  --mz-red-soft: #fdecef;
+  --mz-yellow: #fdc418;
+  --mz-yellow-soft: #fff6d6;
+  --mz-yellow-text: #7a5a00;
+  --mz-blue: #041bf7;
+  --mz-blue-soft: #eef0ff;
+  --mz-green-dark: #198e4d;
+  --mz-green: #00ad73;
+  --mz-green-soft: #e7f5ed;
+  --mz-pink: #f4589f;
+  --mz-chumbo: #383838;
+  --mz-gray-dark: #606060;
+  --mz-gray: #adadad;
+  --mz-bg: #f9f9f9;
+  --mz-white: #ffffff;
+
+  --background: var(--mz-bg);
+  --foreground: var(--mz-chumbo);
+  --card: var(--mz-white);
+  --card-foreground: var(--mz-chumbo);
+  --popover: var(--mz-white);
+  --popover-foreground: var(--mz-chumbo);
+  --primary: var(--mz-red);
+  --primary-foreground: #ffffff;
+  --secondary: #f1f1f1;
+  --secondary-foreground: var(--mz-chumbo);
+  --muted: #f3f3f3;
+  --muted-foreground: var(--mz-gray-dark);
+  --accent: var(--mz-red-soft);
+  --accent-foreground: var(--mz-red-strong);
+  --destructive: var(--mz-red-strong);
+  --border: #e5e5e5;
+  --input: #d9d9d9;
+  --ring: var(--mz-red);
+  --chart-1: var(--mz-red);
+  --chart-2: var(--mz-chumbo);
+  --chart-3: var(--mz-blue);
+  --chart-4: var(--mz-green-dark);
+  --chart-5: var(--mz-yellow);
+  --radius: 0.625rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: var(--mz-chumbo);
+  --sidebar-primary: var(--mz-red);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--mz-red-soft);
+  --sidebar-accent-foreground: var(--mz-red-strong);
+  --sidebar-border: #ececec;
+  --sidebar-ring: var(--mz-red);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+@layer base {
+  h1, h2, h3 { letter-spacing: -0.01em; }
+  :focus-visible { outline: 2px solid var(--mz-red); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Itens de grid não devem crescer além da coluna por causa de tabelas largas
+   (as tabelas rolam horizontalmente dentro de seus próprios contêineres). */
+@layer base {
+  .grid > * { min-width: 0; }
+}
+
+/* Contêineres com rolagem horizontal contêm seus elementos posicionados. */
+@layer base {
+  .overflow-x-auto { position: relative; }
+}
